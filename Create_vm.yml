@@ -18,7 +18,7 @@
       name: testvm_3
       state: present
     #  template: TemplateLast
-      guest_id: Centos7Guest
+      guest_id: debian10_64Guest
       disk:
       - size_gb: 1
         type: thin
