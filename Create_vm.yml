@@ -1,0 +1,29 @@
+---
+- name: Create a VM
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+  - name: Create a VM
+    vmware_guest:
+      hostname: 163.172.109.138
+      validate_certs: no
+      #datacenter: Datacenter
+      cdrom:
+      - type: iso
+        iso_path: "[datastore1] debian-10.9.0-amd64-netinst.iso"
+        controller_number: 1
+        unit_number: 1
+      folder: /
+      name: testvm_3
+      state: present
+    #  template: TemplateLast
+      guest_id: Centos7Guest
+      disk:
+      - size_gb: 1
+        type: thin
+        datastore: datastore1
+      hardware:
+        memory_mb: 512
+        num_cpus: 1
+        scsi: paravirtual
