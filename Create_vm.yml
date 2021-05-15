@@ -8,7 +8,6 @@
     vmware_guest:
       hostname: 163.172.109.138
       validate_certs: no
-      #datacenter: Datacenter
       cdrom:
       - type: iso
         iso_path: "[datastore1] debian-10.9.0-amd64-netinst.iso"
@@ -16,7 +15,6 @@
         unit_number: 0
       folder: /
       name: testvm_3
-      state: present
     #  template: TemplateLast
       guest_id: debian10_64Guest
       disk:
