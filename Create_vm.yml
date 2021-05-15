@@ -11,9 +11,9 @@
       cdrom:
       - type: iso
         iso_path: "[datastore1] debian-10.9.0-amd64-netinst.iso"
-        controller_type: sata
+        #controller_type: sata
         controller_number: 1
-        unit_number: 29
+        #unit_number: 0
       folder: /
       name: testvm_3
     #  template: TemplateLast
