@@ -12,8 +12,8 @@
       - type: iso
         iso_path: "[datastore1] debian-10.9.0-amd64-netinst.iso"
         controller_type: sata
-        #controller_number: 3
-        #unit_number: 3
+        controller_number: 3
+        unit_number: 3
       folder: /
       name: testvm_3
     #  template: TemplateLast
