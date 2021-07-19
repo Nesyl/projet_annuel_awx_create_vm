@@ -1,0 +1,26 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+  - name: Clone the template
+    vmware_guest:
+      hostname: "163.172.109.138"
+      validate_certs: False
+      name: web02
+      template: template-ubuntu-18.04
+      datastore: datastore1
+      networks:
+      - name: VM Network
+        ip: 172.16.16.16
+        netmask: 255.255.255.0
+        gateway: 17.16.16.254
+        type: static
+        dns_servers: 172.16.16.9
+      customization:
+        hostname: "web02"
+        dns_servers:
+        - 172.16.16.9
+        - 1.1.1.1
+      state: poweredon
+      wait_for_ip_address: yes
