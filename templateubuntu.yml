@@ -21,7 +21,7 @@
       #state: poweredon
       guest_id: ubuntu64Guest
       disk:
-      - size_gb: 14
+      - size_gb: 20
         type: thin
         datastore: LUN1
       networks:
