@@ -1,49 +1,47 @@
 
 ---
-- hosts: localhost
+- hosts: all
   gather_facts: false
   connection: local
-
-  private: no
   default: "Deployed with ansible"
   tasks:
 # get date
 #- set_fact: creationdate="{{lookup('pipe','date "+%Y/%m/%d %H:%M"')}}"
 # Create a VM from a template
   - name: create the VM
-  vmware_guest:
-    hostname: 172.180.0.3
-    username: administrator@vsphere.local
-    password: Azerty77!
-    validate_certs: no
-    esxi_hostname: 172.180.0.5
-    datacenter: datacenter
-    folder: /
-    name: vm_test
-    state: poweredon
-    guest_id: debian10_64Guest
-    disk:
-    - size_gb: 14
-      type: thin
-      datastore: LUN1
-    networks:
-    - name: VM Network
-      ip: 172.180.0.22
-      netmask: 255.255.255.0
-      gateway: 172.180.0.2
-    dns_servers:
-    - 172.180.0.2
-    - 8.8.8.8
-    hardware:
-      memory_mb: 2048
-      num_cpus: 1
-    customization:
+    vmware_guest:
+      hostname: 172.180.0.3
+      username: administrator@vsphere.local
+      password: Azerty77!
+      validate_certs: no
+      esxi_hostname: 172.180.0.5
+      datacenter: datacenter
+      folder: /
+      name: vm_test
+      state: poweredon
+      guest_id: debian10_64Guest
+      disk:
+      - size_gb: 14
+        type: thin
+        datastore: LUN1
+      networks:
+      - name: VM Network
+        ip: 172.180.0.22
+        netmask: 255.255.255.0
+        gateway: 172.180.0.2
       dns_servers:
       - 172.180.0.2
       - 8.8.8.8
-      hostname: vm_test_hostname
-      template: TemplateLast
-      wait_for_ip_address: yes
+      hardware:
+        memory_mb: 2048
+        num_cpus: 1
+      customization:
+        dns_servers:
+        - 172.180.0.2
+        - 8.8.8.8
+        hostname: vm_test_hostname
+        template: TemplateLast
+        wait_for_ip_address: yes
 # name: add to ansible hosts file
 #lineinfile:
 #test: /etc/ansible/hosts
