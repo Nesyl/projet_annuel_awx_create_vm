@@ -39,9 +39,9 @@
         dns_servers:
         - 172.180.0.2
         - 8.8.8.8
-        hostname: vm_test_hostname
-        template: TemplateLast
-        wait_for_ip_address: yes
+      hostname: vm_test
+      template: TemplateLast
+      wait_for_ip_address: yes
 # name: add to ansible hosts file
 #lineinfile:
 #test: /etc/ansible/hosts
