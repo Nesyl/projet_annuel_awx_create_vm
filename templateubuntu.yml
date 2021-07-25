@@ -33,7 +33,7 @@
         - 172.180.0.2
         - 8.8.8.8
       hardware:
-        memory_mb: 512
+        memory_mb: 1024
         num_cpus: 1
       customization:
         dns_servers:
