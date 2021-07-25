@@ -39,7 +39,7 @@
         dns_servers:
         - 172.180.0.2
         - 8.8.8.8
-      hostname: vm_test
+      hostname: 172.180.0.3
       template: TemplateLast
       wait_for_ip_address: yes
 # name: add to ansible hosts file
