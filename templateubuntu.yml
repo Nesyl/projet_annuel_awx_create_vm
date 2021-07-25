@@ -1,9 +1,9 @@
 
 ---
-- hosts: all
+- name: Create VM from template
+  hosts: localhost
   gather_facts: false
   connection: local
-  default: "Deployed with ansible"
   tasks:
 # get date
 #- set_fact: creationdate="{{lookup('pipe','date "+%Y/%m/%d %H:%M"')}}"
