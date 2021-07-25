@@ -15,7 +15,7 @@
       password: Azerty77!
       validate_certs: no
       esxi_hostname: 172.180.0.5
-      datacenter: datacenter
+      datacenter: Datacenter
       folder: /
       name: vm_test
       state: poweredon
