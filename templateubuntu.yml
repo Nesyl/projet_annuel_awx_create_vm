@@ -1,26 +1,51 @@
+cat zwindler_vmware_add_normal.yml
 ---
-- hosts: localhost
-  connection: local
-  gather_facts: no
-  tasks:
-  - name: Clone the template
-    vmware_guest:
-      hostname: "163.172.109.138"
-      validate_certs: False
-      name: web02
-      template: template-ubuntu-18.04
-      datastore: datastore1
-      networks:
-      - name: VM Network
-        ip: 172.16.16.16
-        netmask: 255.255.255.0
-        gateway: 17.16.16.254
-        type: static
-        dns_servers: 172.16.16.9
-      customization:
-        hostname: "web02"
-        dns_servers:
-        - 172.16.16.9
-        - 1.1.1.1
-      state: poweredon
-      wait_for_ip_address: yes
+- hosts: 172.180.0.3
+gather_facts: false
+#connection: local
+
+private: no
+default: "Deployed with ansible"
+tasks:
+# get date
+#- set_fact: creationdate="{{lookup('pipe','date "+%Y/%m/%d %H:%M"')}}"
+# Create a VM from a template
+- name: create the VM
+vmware_guest:
+hostname: 172.180.0.3
+username: administrator@vsphere.local
+password: Azerty77!
+validate_certs: no
+esxi_hostname: 172.180.0.5
+datacenter: datacenter
+folder: /
+name: vm_test
+state: poweredon
+guest_id: debian10_64Guest
+disk:
+- size_gb: 14
+type: thin
+datastore: LUN1
+networks:
+- name: VM Network
+ip: 172.180.0.22
+netmask: 255.255.255.0
+gateway: 172.180.0.2
+dns_servers:
+- 172.180.0.2
+- 8.8.8.8
+hardware:
+memory_mb: 2048
+num_cpus: 1
+customization:
+dns_servers:
+- 172.180.0.2
+- 8.8.8.8
+hostname: vm_test_hostname
+template: TemplateLast
+wait_for_ip_address: yes
+# name: add to ansible hosts file
+#lineinfile:
+#test: /etc/ansible/hosts
+#insertafter: '^\[{{ ansible_host_group }}\]'
+#line: '{{ inventory_hostname }}'
