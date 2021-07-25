@@ -1,4 +1,4 @@
-cat zwindler_vmware_add_normal.yml
+
 ---
 - hosts: 172.180.0.3
 gather_facts: false
