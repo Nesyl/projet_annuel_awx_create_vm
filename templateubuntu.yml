@@ -19,7 +19,7 @@
       folder: /
       name: vm_test
       #state: poweredon
-      guest_id: debian10_64Guest
+      guest_id: ubuntu64Guest
       disk:
       - size_gb: 14
         type: thin
@@ -40,7 +40,7 @@
         - 172.180.0.2
         - 8.8.8.8
       hostname: 172.180.0.3
-      template: TemplateLast
+      template: UbuntuTemplate
       wait_for_ip_address: yes
 # name: add to ansible hosts file
 #lineinfile:
