@@ -1,6 +1,6 @@
 
 ---
-- hosts: 172.180.0.3
+- hosts: all
 gather_facts: false
 #connection: local
 
