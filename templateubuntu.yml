@@ -26,7 +26,7 @@
         #ip: 172.180.0.22
         #netmask: 255.255.255.0
         #gateway: 172.180.0.2
-        #type: dhcp
+        #type: static
         #dns_servers:
         #- 172.180.0.2
         #- 8.8.8.8
