@@ -11,8 +11,8 @@
   - name: create the VM
     vmware_guest:
       hostname: 172.180.0.3
-      username: administrator@vsphere.local
-      password: Azerty77!
+      #username: administrator@vsphere.local
+      #password: Azerty77!
       validate_certs: no
       esxi_hostname: 172.180.0.5
       customization:
