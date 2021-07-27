@@ -19,10 +19,10 @@
         dns_servers:
         - 172.180.0.2
         - 8.8.8.8
-      #networks:
-      #- name: VM Network
-        #start_connected: yes       	
-        #connected: yes
+      networks:
+      - name: VM Network
+        start_connected: yes       	
+        connected: yes
         #ip: 172.180.0.22
         #netmask: 255.255.255.0
         #gateway: 172.180.0.2
